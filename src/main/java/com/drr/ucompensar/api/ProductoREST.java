@@ -1,4 +1,4 @@
-package com.drr.ucompensar.controller.usuario;
+package com.drr.ucompensar.api;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
@@ -21,9 +22,15 @@ public class ProductoREST {
 	
 	@GET
     @Produces(MediaType.APPLICATION_JSON)
-	@Path("saludar") 
-    public String saludar() {
-        return "Hola mundo con JakartaEE y RESTful";
+    public List<ProductoDTO> consultarTodos() {
+        return this.productoService.consultarTodos();
+    }
+	
+	@GET
+	@Path("{producto}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ProductoDTO consultarXId(@PathParam("producto") Long idProducto) {
+        return this.productoService.consultarXId(idProducto);
     }
 	
 	@POST
