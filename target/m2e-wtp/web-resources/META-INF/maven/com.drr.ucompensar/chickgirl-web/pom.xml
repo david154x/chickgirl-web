@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+						https://maven.apache.org/xsd/maven-4.0.0.xsd">
+						
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>chickgirl-web</artifactId>
+  <packaging>war</packaging>
+  
+  <name>chickGirl</name>
+
+	<parent>
+		<groupId>com.drr.ucompensar</groupId>
+		<artifactId>chickgirl</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../chickgirl</relativePath>
+	</parent>
+	
+	<properties>
+
+		<!-- JAKARTA FACES -->
+		<jakarta-api-version>11.0.0-M5</jakarta-api-version>
+		<jakarta-faces-version>4.1.2</jakarta-faces-version>
+		<primefaces-version>14.0.12</primefaces-version>
+		<primefaces-extensions-version>14.0.12</primefaces-extensions-version>
+
+		<!--   UTILIDADES   -->
+		<lombok-version>1.18.36</lombok-version>
+		
+		<jakarta.ws.rs.version>4.0.0</jakarta.ws.rs.version>
+		
+	</properties>
+	
+	<dependencies>
+	
+		<dependency>
+			<groupId>com.drr.ucompensar</groupId>
+			<artifactId>chickgirl-bussiness</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>jakarta.platform</groupId>
+			<artifactId>jakarta.jakartaee-api</artifactId>
+			<version>${jakarta-api-version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>jakarta.faces</groupId>
+			<artifactId>jakarta.faces-api</artifactId>
+			<version>${jakarta-faces-version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>${primefaces-version}</version>
+			<classifier>jakarta</classifier>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.primefaces.extensions</groupId>
+		    <artifactId>primefaces-extensions</artifactId>
+		    <version>${primefaces-extensions-version}</version>
+			<classifier>jakarta</classifier>		    
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok-version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>jakarta.ws.rs</groupId>
+			<artifactId>jakarta.ws.rs-api</artifactId>
+			<version>${jakarta.ws.rs.version}</version>
+		</dependency>
+	
+	</dependencies>
+	
+	<build>
+		<finalName>${project.name}</finalName>
+	</build>
+  
+</project>
